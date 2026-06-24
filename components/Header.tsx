@@ -381,11 +381,13 @@ export function Header() {
               <NavigationMenuList className="gap-2">
                 {/* Home Link */}
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}>
-                      Home
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink
+                    href="/"
+                    render={<Link href="/" />}
+                    className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}
+                  >
+                    Home
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Company Menu */}
@@ -562,11 +564,13 @@ export function Header() {
 
                 {/* Contact Menu */}
                 <NavigationMenuItem>
-                  <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}>
-                      Contact
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink
+                    href="/contact"
+                    render={<Link href="/contact" />}
+                    className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}
+                  >
+                    Contact
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Quote Button */}

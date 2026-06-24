@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { User, Mail, Smartphone, Globe, Info, PenTool, ChevronDown, UploadCloud, X, FileText } from "lucide-react";
+import { User, Mail, Smartphone, Globe, Info, PenTool, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const countries = [
@@ -20,59 +20,43 @@ const countries = [
   { name: "Bahrain", code: "+973", flag: "bh" }
 ];
 
-interface ContactFormProps {
-  showResumeUpload?: boolean;
-}
-
-export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
+export function ContactForm() {
   const [selectedCountry, setSelectedCountry] = React.useState(countries[0]);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = React.useState(false);
-  const [resumeFile, setResumeFile] = React.useState<File | null>(null);
-  const [isDragActive, setIsDragActive] = React.useState(false);
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<"idle" | "success" | "error">("idle");
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setResumeFile(e.target.files[0]);
-    }
-  };
-
-  const handleClearFile = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    e.stopPropagation();
-    setResumeFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  };
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-  const handleDrag = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setIsDragActive(true);
-    } else if (e.type === "dragleave") {
-      setIsDragActive(false);
-    }
-  };
+    const formData = new FormData(e.currentTarget);
+    const phone = `${selectedCountry.code} ${formData.get("phone")}`;
+    formData.set("phone", phone);
 
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      const file = e.dataTransfer.files[0];
-      const validTypes = [
-        "application/pdf",
-        "application/msword",
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      ];
-      const extension = file.name.split('.').pop()?.toLowerCase();
-      if (validTypes.includes(file.type) || ['pdf', 'doc', 'docx'].includes(extension || '')) {
-        setResumeFile(file);
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+        signal: controller.signal,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+        setSelectedCountry(countries[0]);
       } else {
-        alert("Please upload a PDF, DOC, or DOCX file.");
+        setSubmitStatus("error");
       }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      clearTimeout(timer);
+      setIsSubmitting(false);
     }
   };
 
@@ -82,7 +66,9 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
         Fill in the Details
       </h1>
 
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        <input type="hidden" name="access_key" value="e9f31c51-7e6c-4c50-aa83-47e53ee79028" />
+        <input type="hidden" name="subject" value="New Contact Form Submission - Devarya Solutions" />
         {/* Full Name */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-zinc-800 flex items-center">
@@ -91,6 +77,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
           <div className="relative">
             <input
               type="text"
+              name="name"
               required
               placeholder="Full Name"
               className="w-full h-12 pl-4 pr-12 border border-zinc-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-zinc-800 placeholder:text-zinc-400 bg-white"
@@ -108,6 +95,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
             <div className="relative">
               <input
                 type="email"
+                name="email"
                 required
                 placeholder="Email Id"
                 className="w-full h-12 pl-4 pr-12 border border-zinc-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-zinc-800 placeholder:text-zinc-400 bg-white"
@@ -171,6 +159,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
               </div>
               <input
                 type="tel"
+                name="phone"
                 required
                 placeholder="Your Mobile"
                 className="flex-1 min-w-0 h-12 pl-4 pr-12 border border-zinc-200 rounded-r-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-zinc-800 placeholder:text-zinc-400 bg-white"
@@ -186,6 +175,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
             </label>
             <div className="relative">
               <select
+                name="service"
                 defaultValue=""
                 required
                 className="w-full h-12 pl-4 pr-14 appearance-none border border-zinc-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-zinc-800 bg-white cursor-pointer"
@@ -240,6 +230,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
             <div className="relative">
               <input
                 type="text"
+                name="other"
                 placeholder="Any additional requirements or information"
                 className="w-full h-12 px-4 pr-12 border border-zinc-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-zinc-800 placeholder:text-zinc-400 bg-white"
               />
@@ -260,6 +251,7 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
           </label>
           <div className="relative">
             <textarea
+              name="message"
               required
               placeholder="Your Message"
               rows={4}
@@ -269,78 +261,25 @@ export function ContactForm({ showResumeUpload = false }: ContactFormProps) {
           </div>
         </div>
 
-        {/* Attach Resume */}
-        {showResumeUpload && (
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-zinc-800 flex items-center">
-              Attach Resume <span className="text-zinc-500 font-normal ml-2">(Optional - PDF, DOC, DOCX)</span>
-            </label>
-            <div
-              onDragEnter={handleDrag}
-              onDragOver={handleDrag}
-              onDragLeave={handleDrag}
-              onDrop={handleDrop}
-              onClick={() => fileInputRef.current?.click()}
-              className={`border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-all ${
-                isDragActive
-                  ? "border-blue-500 bg-blue-50/30"
-                  : resumeFile
-                  ? "border-emerald-500 bg-emerald-50/10"
-                  : "border-zinc-200 hover:border-blue-500 bg-zinc-50/50 hover:bg-blue-50/10"
-              }`}
-            >
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              {resumeFile ? (
-                <div className="flex items-center justify-between bg-white border border-emerald-100 rounded-lg p-3 shadow-sm animate-in fade-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
-                      <FileText className="w-6 h-6 shrink-0" />
-                    </div>
-                    <div className="text-left min-w-0">
-                      <p className="text-sm font-semibold text-zinc-800 truncate">
-                        {resumeFile.name}
-                      </p>
-                      <p className="text-xs text-zinc-500">
-                        {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={handleClearFile}
-                    className="p-1.5 hover:bg-zinc-100 text-zinc-400 hover:text-zinc-600 rounded-full transition-colors cursor-pointer"
-                    title="Remove file"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center gap-2">
-                  <UploadCloud className="w-10 h-10 text-zinc-400 animate-pulse duration-[3000ms]" />
-                  <div className="text-sm font-medium text-zinc-700">
-                    <span className="text-blue-600 hover:underline">Click to upload</span> or drag and drop
-                  </div>
-                  <p className="text-xs text-zinc-500">PDF, DOC, DOCX up to 5MB</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
         {/* Submit Button */}
-        <div className="pt-4 flex justify-start">
+        <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
           <Button
             type="submit"
-            className="w-full sm:w-auto bg-gradient-to-r from-[#10b981] to-[#2563eb] hover:opacity-90 text-white font-bold py-6 sm:py-7 px-8 sm:px-10 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-center flex justify-center items-center"
+            disabled={isSubmitting}
+            className="w-full sm:w-auto bg-gradient-to-r from-[#10b981] to-[#2563eb] hover:opacity-90 text-white font-bold py-6 sm:py-7 px-8 sm:px-10 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all text-center flex justify-center items-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
           >
-            SUBMIT NOW
+            {isSubmitting ? "Sending..." : "SUBMIT NOW"}
           </Button>
+          {submitStatus === "success" && (
+            <p className="text-emerald-600 font-semibold text-sm">
+              Thank you! We&apos;ll be in touch soon.
+            </p>
+          )}
+          {submitStatus === "error" && (
+            <p className="text-red-500 font-semibold text-sm">
+              Something went wrong. Please try again.
+            </p>
+          )}
         </div>
       </form>
     </div>
