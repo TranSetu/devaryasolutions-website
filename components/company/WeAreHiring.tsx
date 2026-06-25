@@ -375,7 +375,7 @@ export function WeAreHiring() {
             </p>
           </div>
           
-          <ContactForm showResumeUpload={true} />
+          <ContactForm />
         </div>
       </section>
 

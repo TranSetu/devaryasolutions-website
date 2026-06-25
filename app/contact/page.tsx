@@ -2,6 +2,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 
+export const metadata = {
+  title: "Contact Us — Get a Free Project Quote",
+  description:
+    "Reach out to Devarya Solutions for mobile app development, web development, or digital marketing services. Get a free project consultation and quote today.",
+  alternates: { canonical: "https://devaryasolutions.com/contact" },
+};
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen relative overflow-hidden bg-zinc-50 flex flex-col justify-between">

@@ -13,7 +13,7 @@ import {
   UtensilsCrossed, Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video,
   Car, PlayCircle, Store, CircleDollarSign, Wrench,
   ShoppingBasket, Truck, Bike, Scissors, QrCode,
-  Home, AppWindow, Aperture, Feather, Shield, Triangle, Flame, MonitorSmartphone, FileCode, Hexagon, X,
+  Home, AppWindow, Shield, MonitorSmartphone, FileCode, Hexagon, X,
   ChevronDown, Info, Users, Briefcase, Terminal
 } from "lucide-react";
 
@@ -254,28 +254,10 @@ const hireItems = [
     icon: Apple,
   },
   {
-    title: "Flutter Developers",
-    description: "Cross-platform mobile experts",
-    href: "/hire/flutter-developers",
-    icon: Feather,
-  },
-  {
     title: "React Native Developers",
     description: "Hybrid mobile app engineers",
     href: "/hire/react-native-developers",
     icon: RefreshCw,
-  },
-  {
-    title: "Ionic Developers",
-    description: "Web-to-mobile wrapper specialists",
-    href: "/hire/ionic-developers",
-    icon: Aperture,
-  },
-  {
-    title: "Angular Developers",
-    description: "Enterprise frontend experts",
-    href: "/hire/angular-developers",
-    icon: Triangle,
   },
   {
     title: "Node.js Developers",
@@ -288,12 +270,6 @@ const hireItems = [
     description: "Dynamic site & backend builders",
     href: "/hire/php-developers",
     icon: FileCode,
-  },
-  {
-    title: "Codeigniter Developers",
-    description: "Lightweight MVC PHP experts",
-    href: "/hire/codeigniter-developers",
-    icon: Flame,
   },
   {
     title: "Python Developers",
