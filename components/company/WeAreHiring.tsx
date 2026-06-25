@@ -77,7 +77,7 @@ export function WeAreHiring() {
   const processSteps = [
     {
       title: "Application Review",
-      description: "Submit your resume through our form. Our recruiting team checks experience blueprints and tech stacks."
+      description: "Submit your details through our form. Our recruiting team reviews your experience and tech stack."
     },
     {
       title: "Technical Assessment",
@@ -104,7 +104,7 @@ export function WeAreHiring() {
     },
     {
       question: "How long does the hiring process take?",
-      answer: "We value your time. The entire process from resume review to final offer typically takes between 7 to 14 days."
+      answer: "We value your time. The entire process from application review to final offer typically takes between 7 to 14 days."
     }
   ];
 
@@ -371,7 +371,7 @@ export function WeAreHiring() {
               Ready to Join Devarya Solutions?
             </h2>
             <p className="text-zinc-500 max-w-2xl mx-auto text-base">
-              Submit your details, select requirement "Hire Dedicated Developers" (or list it in Message), and attach your resume. We'll reach out within 24 hours.
+              Submit your details and select requirement "Hire Dedicated Developers" (or mention it in the Message). We'll reach out within 24 hours.
             </p>
           </div>
           

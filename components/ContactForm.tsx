@@ -270,16 +270,18 @@ export function ContactForm() {
           >
             {isSubmitting ? "Sending..." : "SUBMIT NOW"}
           </Button>
-          {submitStatus === "success" && (
-            <p className="text-emerald-600 font-semibold text-sm">
-              Thank you! We&apos;ll be in touch soon.
-            </p>
-          )}
-          {submitStatus === "error" && (
-            <p className="text-red-500 font-semibold text-sm">
-              Something went wrong. Please try again.
-            </p>
-          )}
+          <div aria-live="polite" aria-atomic="true" className="empty:hidden">
+            {submitStatus === "success" && (
+              <p className="text-emerald-600 font-semibold text-sm">
+                Thank you! We&apos;ll be in touch soon.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-red-500 font-semibold text-sm">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </div>
         </div>
       </form>
     </div>

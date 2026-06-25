@@ -94,7 +94,7 @@ const jsonLd = {
       },
       priceRange: "$$",
       description:
-        "Devarya Solutions delivers scalable mobile apps, web applications, e-commerce platforms, AI solutions, and digital marketing services for startups and enterprises.",
+        "Devarya Solutions delivers scalable mobile apps, web applications, e-commerce platforms, and AI solutions for startups and enterprises.",
     },
   ],
 };

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us — Get a Free Project Quote",
   description:
-    "Reach out to Devarya Solutions for mobile app development, web development, or digital marketing services. Get a free project consultation and quote today.",
+    "Reach out to Devarya Solutions for mobile app development, web development, or AI solutions. Get a free project consultation and quote today.",
   alternates: { canonical: "https://devaryasolutions.com/contact" },
 };
 
