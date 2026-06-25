@@ -29,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/sem`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/smm`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/content-writing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/services/ai-chatbot`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/services/generative-ai`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/services/ai-automation`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
 
     // Products
     { url: `${BASE}/products/food-delivery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
@@ -47,6 +50,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/products/short-video`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/products/beauty-salon`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/products/qr-menu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/products/ai-chatbot`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/products/ai-analytics`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/products/ai-document`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/products/ai-recommendation`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
 
     // Hire
     { url: `${BASE}/hire/web-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },

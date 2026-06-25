@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Devarya Solutions",
   },
   description:
-    "Devarya Solutions delivers scalable mobile apps, web applications, and e-commerce platforms for startups and enterprises across India.",
+    "Devarya Solutions delivers scalable mobile apps, web applications, e-commerce platforms, and AI solutions for startups and enterprises across India.",
   keywords: [
     "mobile app development",
     "web development",
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     "iOS app development",
     "React Native",
     "e-commerce development",
+    "AI chatbot development",
+    "generative AI integration",
+    "AI process automation",
+    "machine learning solutions",
+    "AI software development India",
     "Devarya Solutions",
   ],
   authors: [{ name: "Devarya Solutions Private Limited" }],
@@ -33,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Devarya Solutions",
     title: "Devarya Solutions | Mobile & Web App Development Company",
     description:
-      "Scalable mobile apps, web applications, and e-commerce platforms for startups and enterprises.",
+      "Scalable mobile apps, web applications, e-commerce platforms, and AI solutions for startups and enterprises.",
     images: [
       {
         url: "/opengraph-image.png",
@@ -47,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Devarya Solutions | Mobile & Web App Development",
     description:
-      "Scalable mobile apps, web applications, and e-commerce platforms for startups and enterprises.",
+      "Scalable mobile apps, web applications, e-commerce platforms, and AI solutions for startups and enterprises.",
     images: ["/opengraph-image.png"],
   },
   robots: { index: true, follow: true },
@@ -89,7 +94,7 @@ const jsonLd = {
       },
       priceRange: "$$",
       description:
-        "Devarya Solutions delivers scalable mobile apps, web applications, e-commerce platforms, and digital marketing services for startups and enterprises.",
+        "Devarya Solutions delivers scalable mobile apps, web applications, e-commerce platforms, AI solutions, and digital marketing services for startups and enterprises.",
     },
   ],
 };
