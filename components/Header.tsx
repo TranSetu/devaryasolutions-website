@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
   Menu, ArrowRight, Smartphone, Globe, Gamepad2, Palette, Hourglass,
-  Bot, Apple, RefreshCw, Rocket, 
+  Bot, Apple, RefreshCw, Rocket,
   TrendingUp, Building, ShoppingCart, Layout, PenTool,
   Club, Box, Dices, Grid,
   LayoutDashboard, Smile,
@@ -13,8 +13,9 @@ import {
   UtensilsCrossed, Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video,
   Car, PlayCircle, Store, CircleDollarSign, Wrench,
   ShoppingBasket, Truck, Bike, Scissors, QrCode,
-  Home, AppWindow, Aperture, Feather, Shield, Triangle, Flame, MonitorSmartphone, FileCode, Hexagon, X,
-  ChevronDown, Info, Users, Briefcase, Terminal
+  Home, AppWindow, Shield, MonitorSmartphone, FileCode, Hexagon, X,
+  ChevronDown, Info, Users, Briefcase, Terminal,
+  BrainCircuit, Sparkles, Wand2, BotMessageSquare, BarChart3, FileSearch2, Lightbulb
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
@@ -133,6 +134,27 @@ const servicesItems = [
     href: "/services/content-writing",
     icon: FileText,
   },
+  {
+    title: "AI Chatbot Development",
+    description: "Conversational AI for businesses",
+    href: "/services/ai-chatbot",
+    icon: BrainCircuit,
+    badge: "AI",
+  },
+  {
+    title: "Generative AI Integration",
+    description: "Embed LLMs into your products",
+    href: "/services/generative-ai",
+    icon: Sparkles,
+    badge: "AI",
+  },
+  {
+    title: "AI Process Automation",
+    description: "Intelligent workflow automation",
+    href: "/services/ai-automation",
+    icon: Wand2,
+    badge: "AI",
+  },
 ];
 
 const productsItems = [
@@ -232,6 +254,34 @@ const productsItems = [
     href: "/products/qr-menu",
     icon: QrCode,
   },
+  {
+    title: "AI Chatbot Platform",
+    description: "White-label conversational AI suite",
+    href: "/products/ai-chatbot",
+    icon: BotMessageSquare,
+    badge: "AI",
+  },
+  {
+    title: "AI Analytics Dashboard",
+    description: "Intelligent business intelligence",
+    href: "/products/ai-analytics",
+    icon: BarChart3,
+    badge: "AI",
+  },
+  {
+    title: "AI Document Processing",
+    description: "Automated document intelligence",
+    href: "/products/ai-document",
+    icon: FileSearch2,
+    badge: "AI",
+  },
+  {
+    title: "AI Recommendation Engine",
+    description: "Personalized product & content AI",
+    href: "/products/ai-recommendation",
+    icon: Lightbulb,
+    badge: "AI",
+  },
 ];
 
 const hireItems = [
@@ -254,28 +304,10 @@ const hireItems = [
     icon: Apple,
   },
   {
-    title: "Flutter Developers",
-    description: "Cross-platform mobile experts",
-    href: "/hire/flutter-developers",
-    icon: Feather,
-  },
-  {
     title: "React Native Developers",
     description: "Hybrid mobile app engineers",
     href: "/hire/react-native-developers",
     icon: RefreshCw,
-  },
-  {
-    title: "Ionic Developers",
-    description: "Web-to-mobile wrapper specialists",
-    href: "/hire/ionic-developers",
-    icon: Aperture,
-  },
-  {
-    title: "Angular Developers",
-    description: "Enterprise frontend experts",
-    href: "/hire/angular-developers",
-    icon: Triangle,
   },
   {
     title: "Node.js Developers",
@@ -288,12 +320,6 @@ const hireItems = [
     description: "Dynamic site & backend builders",
     href: "/hire/php-developers",
     icon: FileCode,
-  },
-  {
-    title: "Codeigniter Developers",
-    description: "Lightweight MVC PHP experts",
-    href: "/hire/codeigniter-developers",
-    icon: Flame,
   },
   {
     title: "Python Developers",
@@ -381,42 +407,13 @@ export function Header() {
               <NavigationMenuList className="gap-2">
                 {/* Home Link */}
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}>
-                      Home
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-
-                {/* Company Menu */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 data-[state=open]:text-blue-600 transition-colors duration-200">
-                    Company
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="container mx-auto px-4 md:px-8 lg:px-12 py-8">
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl gap-6">
-                        <li>
-                          <Link href="/profile" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
-                            <FileText className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
-                            <div className="flex flex-col">
-                              <span>Company Profile</span>
-                              <span className="text-xs text-zinc-400 font-normal">Our journey & milestones</span>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/careers" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
-                            <Briefcase className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
-                            <div className="flex flex-col">
-                              <span>We Are Hiring</span>
-                              <span className="text-xs text-zinc-400 font-normal">Join our growing team</span>
-                            </div>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink
+                    href="/"
+                    render={<Link href="/" />}
+                    className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}
+                  >
+                    Home
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Services Menu */}
@@ -437,12 +434,12 @@ export function Header() {
                           const isActive = pathname === item.href;
                           return (
                             <li key={idx}>
-                              <Link 
-                                href={item.href} 
+                              <Link
+                                href={item.href}
                                 className={cn(
                                   "flex items-center gap-3 rounded-xl p-3 transition-all text-[17px] font-semibold group w-full",
-                                  isActive 
-                                    ? "bg-blue-50 text-blue-600" 
+                                  isActive
+                                    ? "bg-blue-50 text-blue-600"
                                     : "text-zinc-700 hover:bg-slate-50 hover:text-blue-600"
                                 )}
                               >
@@ -451,7 +448,14 @@ export function Header() {
                                   isActive ? "text-blue-600" : "text-zinc-400 group-hover:text-blue-600"
                                 )} />
                                 <div className="flex flex-col">
-                                  <span>{item.title}</span>
+                                  <span className="flex items-center gap-1.5">
+                                    {item.title}
+                                    {"badge" in item && item.badge && (
+                                      <span className="inline-block bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                                        {item.badge}
+                                      </span>
+                                    )}
+                                  </span>
                                   <span className={cn(
                                     "text-xs font-normal",
                                     isActive ? "text-blue-500/80" : "text-zinc-400"
@@ -484,12 +488,12 @@ export function Header() {
                           const isActive = pathname === item.href;
                           return (
                             <li key={idx}>
-                              <Link 
-                                href={item.href} 
+                              <Link
+                                href={item.href}
                                 className={cn(
                                   "flex items-center gap-3 rounded-xl p-3 transition-all text-[17px] font-semibold group w-full",
-                                  isActive 
-                                    ? "bg-blue-50 text-blue-600" 
+                                  isActive
+                                    ? "bg-blue-50 text-blue-600"
                                     : "text-zinc-700 hover:bg-slate-50 hover:text-blue-600"
                                 )}
                               >
@@ -498,7 +502,14 @@ export function Header() {
                                   isActive ? "text-blue-600" : "text-zinc-400 group-hover:text-blue-600"
                                 )} />
                                 <div className="flex flex-col">
-                                  <span>{item.title}</span>
+                                  <span className="flex items-center gap-1.5">
+                                    {item.title}
+                                    {"badge" in item && item.badge && (
+                                      <span className="inline-block bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                                        {item.badge}
+                                      </span>
+                                    )}
+                                  </span>
                                   <span className={cn(
                                     "text-xs font-normal",
                                     isActive ? "text-blue-500/80" : "text-zinc-400"
@@ -560,13 +571,46 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
+                {/* Company Menu */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 data-[state=open]:text-blue-600 transition-colors duration-200">
+                    Company
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="container mx-auto px-4 md:px-8 lg:px-12 py-8">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl gap-6">
+                        <li>
+                          <Link href="/profile" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
+                            <FileText className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
+                            <div className="flex flex-col">
+                              <span>Company Profile</span>
+                              <span className="text-xs text-zinc-400 font-normal">Our journey & milestones</span>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/careers" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
+                            <Briefcase className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
+                            <div className="flex flex-col">
+                              <span>We Are Hiring</span>
+                              <span className="text-xs text-zinc-400 font-normal">Join our growing team</span>
+                            </div>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
                 {/* Contact Menu */}
                 <NavigationMenuItem>
-                  <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}>
-                      Contact
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink
+                    href="/contact"
+                    render={<Link href="/contact" />}
+                    className={cn(navigationMenuTriggerStyle(), "bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 transition-colors duration-200")}
+                  >
+                    Contact
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Quote Button */}
@@ -645,8 +689,9 @@ export function Header() {
                           const isActive = pathname === item.href;
                           return (
                             <li key={idx}>
-                              <Link 
-                                href={item.href} 
+                              <Link
+                                href={item.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className={cn(
                                   "flex items-center gap-3 text-base font-medium py-1.5 px-3 rounded-lg transition-colors",
                                   isActive ? "bg-blue-50 text-blue-600" : "text-zinc-600"
@@ -656,7 +701,14 @@ export function Header() {
                                   "w-4 h-4 shrink-0",
                                   isActive ? "text-blue-600" : "text-zinc-400"
                                 )} />
-                                {item.title}
+                                <span className="flex items-center gap-1.5">
+                                  {item.title}
+                                  {"badge" in item && item.badge && (
+                                    <span className="inline-block bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                                      {item.badge}
+                                    </span>
+                                  )}
+                                </span>
                               </Link>
                             </li>
                           );
@@ -684,8 +736,9 @@ export function Header() {
                           const isActive = pathname === item.href;
                           return (
                             <li key={idx}>
-                              <Link 
-                                href={item.href} 
+                              <Link
+                                href={item.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className={cn(
                                   "flex items-center gap-3 text-base font-medium py-1.5 px-3 rounded-lg transition-colors",
                                   isActive ? "bg-blue-50 text-blue-600" : "text-zinc-600"
@@ -695,7 +748,14 @@ export function Header() {
                                   "w-4 h-4 shrink-0",
                                   isActive ? "text-blue-600" : "text-zinc-400"
                                 )} />
-                                {item.title}
+                                <span className="flex items-center gap-1.5">
+                                  {item.title}
+                                  {"badge" in item && item.badge && (
+                                    <span className="inline-block bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                                      {item.badge}
+                                    </span>
+                                  )}
+                                </span>
                               </Link>
                             </li>
                           );
