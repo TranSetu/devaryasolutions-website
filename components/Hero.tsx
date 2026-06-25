@@ -38,6 +38,24 @@ export function Hero() {
             Private Limited
           </span>
         </h1>
+
+        <p className="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 font-medium leading-relaxed">
+          We build mobile apps, web platforms, and AI-powered products for startups and growing businesses — end to end.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/services/web-app-dev">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-4 text-base font-semibold shadow-lg shadow-blue-200 transition-all duration-200">
+              Explore Services
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button size="lg" variant="outline" className="rounded-full px-8 py-4 text-base font-semibold border-slate-300 text-slate-700 hover:border-blue-500 hover:text-blue-600 transition-all duration-200">
+              Get a Quote
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );
