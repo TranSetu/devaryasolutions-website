@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/profile`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/careers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/transetu/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
 
     // Services (core business — highest priority after home)
     { url: `${BASE}/services/android-apps`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },

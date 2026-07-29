@@ -117,6 +117,13 @@ export function Footer() {
                   <ExternalLink className="w-3.5 h-3.5" />
                 </div>
               </Link>
+
+              <Link
+                href="/transetu/privacy-policy"
+                className="block text-xs text-zinc-500 hover:text-blue-400 transition-colors"
+              >
+                Transetu Agent Privacy Policy
+              </Link>
             </div>
           </div>
 
