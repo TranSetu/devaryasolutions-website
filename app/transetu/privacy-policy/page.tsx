@@ -79,6 +79,13 @@ export default function TransetuPrivacyPolicyPage() {
                 additional period required by applicable laws and regulations. You may request deletion of your
                 account and associated data by contacting us.
               </p>
+              <p>
+                See our{" "}
+                <a href="/transetu/data-deletion" className="text-blue-600 hover:underline">
+                  Data Deletion
+                </a>{" "}
+                page for details on how to request account and data deletion.
+              </p>
             </section>
 
             <section>
