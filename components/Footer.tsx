@@ -40,7 +40,15 @@ export function Footer() {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
+                <Link
+                  href="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Home
+                </Link>
               </li>
               <li>
                 <Link href="/profile" className="hover:text-blue-400 transition-colors">Company Profile</Link>
