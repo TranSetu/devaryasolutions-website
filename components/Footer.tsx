@@ -88,7 +88,7 @@ export function Footer() {
               </p>
               
               <Link 
-                href={TRANSETU_URL}
+                href="https://transetu.com/"
                 className="group relative flex items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800/80 hover:border-blue-500/50 hover:bg-slate-900/60 transition-all duration-300 shadow-sm cursor-pointer"
               >
                 {/* Brand Logo Container */}
