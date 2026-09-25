@@ -40,7 +40,15 @@ export function Footer() {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-400 transition-colors">Home</Link>
+                <Link
+                  href="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Home
+                </Link>
               </li>
               <li>
                 <Link href="/profile" className="hover:text-blue-400 transition-colors">Company Profile</Link>
@@ -88,7 +96,7 @@ export function Footer() {
               </p>
               
               <Link 
-                href={TRANSETU_URL}
+                href="https://transetu.com/"
                 className="group relative flex items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800/80 hover:border-blue-500/50 hover:bg-slate-900/60 transition-all duration-300 shadow-sm cursor-pointer"
               >
                 {/* Brand Logo Container */}
