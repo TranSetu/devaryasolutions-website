@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { 
-  UtensilsCrossed, Car, Stethoscope, GraduationCap, Bot, ShoppingBag, ArrowRight,
+  UtensilsCrossed, Car, Stethoscope, GraduationCap, Bot, ShoppingBag,
   ShoppingBasket, Building2, Building, Store, Wrench, Truck, Share2, Ticket, Video,
-  Scissors, QrCode, BarChart3, FileSearch2, Lightbulb 
+  Scissors, QrCode, BarChart3, FileSearch2, Lightbulb, ChevronDown, ChevronUp
 } from "lucide-react";
 
 const products = [
@@ -266,9 +266,17 @@ export function ProductsOverview() {
           <button
             type="button"
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-2.5 transition-all duration-200 cursor-pointer"
           >
-            {showAll ? "Show less" : "View all products"} <ArrowRight className="w-4 h-4" />
+            {showAll ? (
+              <>
+                Show Less <ChevronUp className="w-4 h-4" />
+              </>
+            ) : (
+              <>
+                View All Products <ChevronDown className="w-4 h-4" />
+              </>
+            )}
           </button>
         </div>
       </div>
