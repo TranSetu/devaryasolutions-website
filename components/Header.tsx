@@ -3,19 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Menu, ArrowRight, Smartphone, Globe, Gamepad2, Palette, Hourglass,
-  Bot, Apple, RefreshCw, Rocket,
-  TrendingUp, Building, ShoppingCart, Layout, PenTool,
-  Club, Box, Dices, Grid,
-  LayoutDashboard, Smile,
-  Search, FileSearch, Share2, FileText,
-  UtensilsCrossed, Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video,
-  Car, PlayCircle, Store, CircleDollarSign, Wrench,
-  ShoppingBasket, Truck, Bike, Scissors, QrCode,
-  Home, AppWindow, Shield, MonitorSmartphone, FileCode, Hexagon, X,
-  ChevronDown, Info, Users, Briefcase, Terminal,
-  BrainCircuit, Sparkles, Wand2, BotMessageSquare, BarChart3, FileSearch2, Lightbulb
+import {
+  Menu, ArrowRight, Bot, Apple, RefreshCw, Rocket, TrendingUp, Building,
+  ShoppingCart, Layout, PenTool, Search, FileSearch, Share2, FileText, UtensilsCrossed,
+  Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video, Car, Store,
+  Wrench, ShoppingBasket, Truck, Scissors, QrCode, Home, X, ChevronDown,
+  BrainCircuit, Sparkles, Wand2, BotMessageSquare, BarChart3, FileSearch2, Lightbulb,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
@@ -464,15 +457,6 @@ export function Header() {
                             </div>
                           </Link>
                         </li>
-                        <li>
-                          <Link href="/careers" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
-                            <Briefcase className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
-                            <div className="flex flex-col">
-                              <span>We Are Hiring</span>
-                              <span className="text-xs text-zinc-400 font-normal">Join our growing team</span>
-                            </div>
-                          </Link>
-                        </li>
                       </ul>
                     </div>
                   </NavigationMenuContent>
@@ -535,11 +519,6 @@ export function Header() {
                         <li>
                           <Link href="/profile" className="flex items-center gap-3 text-base text-zinc-600 font-medium py-1">
                             <FileText className="w-4 h-4 text-zinc-400" /> Company Profile
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/careers" className="flex items-center gap-3 text-base text-zinc-600 font-medium py-1">
-                            <Briefcase className="w-4 h-4 text-zinc-400" /> We Are Hiring
                           </Link>
                         </li>
                       </ul>
