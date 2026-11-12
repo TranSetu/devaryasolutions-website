@@ -284,7 +284,6 @@ export function Header() {
   const [mobileCompanyOpen, setMobileCompanyOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = React.useState(false);
-
   // Prevent body scroll when modal is open
   React.useEffect(() => {
     if (isQuoteOpen) {
@@ -619,7 +618,6 @@ export function Header() {
                       </ul>
                     )}
                   </div>
-
                   {/* Contact Link */}
                   <Link 
                     href="/contact" 
