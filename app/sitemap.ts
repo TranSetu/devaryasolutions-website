@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: new Date(), changeFrequency: "yearly", priority: 1.0 },
     { url: `${BASE}/profile`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/careers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/transetu/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
 
     // Services (core business — highest priority after home)
@@ -55,19 +54,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/products/ai-analytics`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/products/ai-document`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/products/ai-recommendation`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-
-    // Hire
-    { url: `${BASE}/hire/web-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/android-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/ios-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/react-native-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/nodejs-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/php-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/python-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/unity-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/frontend-developers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/ui-ux-designers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/graphic-designers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/hire/web-designers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 }

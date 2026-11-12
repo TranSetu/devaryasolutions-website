@@ -196,24 +196,6 @@ export function ContactForm() {
                   <option value="smm">Social Media Marketing (SMM)</option>
                   <option value="content-writing">Content Writing</option>
                 </optgroup>
-                <optgroup label="Hire Dedicated Developers" className="font-bold text-slate-900 bg-slate-100">
-                  <option value="~hire-web-dev">Hire Web Developers</option>
-                  <option value="hire-android-dev">Hire Android Developers</option>
-                  <option value="hire-ios-dev">Hire iOS Developers</option>
-                  <option value="hire-flutter-dev">Hire Flutter Developers</option>
-                  <option value="hire-react-native-dev">Hire React Native Developers</option>
-                  <option value="hire-ionic-dev">Hire Ionic Developers</option>
-                  <option value="hire-angular-dev">Hire Angular Developers</option>
-                  <option value="hire-nodejs-dev">Hire Node.js Developers</option>
-                  <option value="hire-php-dev">Hire PHP Developers</option>
-                  <option value="hire-codeigniter-dev">Hire Codeigniter Developers</option>
-                  <option value="hire-python-dev">Hire Python Developers</option>
-                  <option value="hire-unity-dev">Hire Unity Developers</option>
-                  <option value="hire-frontend-dev">Hire Front-End Developers</option>
-                  <option value="hire-ui-ux-designers">Hire UI/UX Designers</option>
-                  <option value="hire-graphic-designers">Hire Graphic Designers</option>
-                  <option value="hire-web-designers">Hire Web Designers</option>
-                </optgroup>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center pointer-events-none text-zinc-500">
                 <Globe className="w-5 h-5 mr-1" />

@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { ProductsOverview } from "@/components/home/ProductsOverview";
-import { HireOverview } from "@/components/home/HireOverview";
 
 export const metadata = {
   title: "Mobile & Web App Development Company in India",
@@ -19,7 +18,6 @@ export default function Home() {
       <Hero />
       <ServicesOverview />
       <ProductsOverview />
-      <HireOverview />
       <Footer />
     </main>
   );

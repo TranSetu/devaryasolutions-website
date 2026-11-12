@@ -3,19 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Menu, ArrowRight, Smartphone, Globe, Gamepad2, Palette, Hourglass,
-  Bot, Apple, RefreshCw, Rocket,
-  TrendingUp, Building, ShoppingCart, Layout, PenTool,
-  Club, Box, Dices, Grid,
-  LayoutDashboard, Smile,
-  Search, FileSearch, Share2, FileText,
-  UtensilsCrossed, Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video,
-  Car, PlayCircle, Store, CircleDollarSign, Wrench,
-  ShoppingBasket, Truck, Bike, Scissors, QrCode,
-  Home, AppWindow, Shield, MonitorSmartphone, FileCode, Hexagon, X,
-  ChevronDown, Info, Users, Briefcase, Terminal,
-  BrainCircuit, Sparkles, Wand2, BotMessageSquare, BarChart3, FileSearch2, Lightbulb
+import {
+  Menu, ArrowRight, Bot, Apple, RefreshCw, Rocket, TrendingUp, Building,
+  ShoppingCart, Layout, PenTool, Search, FileSearch, Share2, FileText, UtensilsCrossed,
+  Building2, BriefcaseMedical, Handshake, GraduationCap, Ticket, Video, Car, Store,
+  Wrench, ShoppingBasket, Truck, Scissors, QrCode, Home, X, ChevronDown,
+  BrainCircuit, Sparkles, Wand2, BotMessageSquare, BarChart3, FileSearch2, Lightbulb,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
@@ -284,81 +277,6 @@ const productsItems = [
   },
 ];
 
-const hireItems = [
-  {
-    title: "Web Developers",
-    description: "Custom web application builders",
-    href: "/hire/web-developers",
-    icon: AppWindow,
-  },
-  {
-    title: "Android Developers",
-    description: "Native Android app engineers",
-    href: "/hire/android-developers",
-    icon: Bot,
-  },
-  {
-    title: "iOS Developers",
-    description: "Premium iOS app developers",
-    href: "/hire/ios-developers",
-    icon: Apple,
-  },
-  {
-    title: "React Native Developers",
-    description: "Hybrid mobile app engineers",
-    href: "/hire/react-native-developers",
-    icon: RefreshCw,
-  },
-  {
-    title: "Node.js Developers",
-    description: "Fast server-side backend developers",
-    href: "/hire/nodejs-developers",
-    icon: Hexagon,
-  },
-  {
-    title: "PHP Developers",
-    description: "Dynamic site & backend builders",
-    href: "/hire/php-developers",
-    icon: FileCode,
-  },
-  {
-    title: "Python Developers",
-    description: "AI, data & robust backend developers",
-    href: "/hire/python-developers",
-    icon: Terminal,
-  },
-  {
-    title: "Unity Developers",
-    description: "Immersive game & AR/VR creators",
-    href: "/hire/unity-developers",
-    icon: Box,
-  },
-  {
-    title: "Front-End Developers",
-    description: "UI/UX & responsive design experts",
-    href: "/hire/frontend-developers",
-    icon: MonitorSmartphone,
-  },
-  {
-    title: "UI/UX Designers",
-    description: "Wireframing & user journey artists",
-    href: "/hire/ui-ux-designers",
-    icon: Palette,
-  },
-  {
-    title: "Graphic Designers",
-    description: "Visual identity & branding specialists",
-    href: "/hire/graphic-designers",
-    icon: PenTool,
-  },
-  {
-    title: "Web Designers",
-    description: "Modern web layout & styling experts",
-    href: "/hire/web-designers",
-    icon: Shield,
-  },
-];
-
 export function Header() {
   const pathname = usePathname();
   const [isQuoteOpen, setIsQuoteOpen] = React.useState(false);
@@ -366,7 +284,6 @@ export function Header() {
   const [mobileCompanyOpen, setMobileCompanyOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = React.useState(false);
-  const [mobileHireOpen, setMobileHireOpen] = React.useState(false);
 
   // Prevent body scroll when modal is open
   React.useEffect(() => {
@@ -524,53 +441,6 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Hire Menu */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={cn(
-                    "bg-transparent h-10 px-3.5 text-[20px] font-semibold transition-colors duration-200",
-                    pathname.startsWith("/hire") 
-                      ? "text-blue-600 hover:text-blue-700 data-[state=open]:text-blue-700 font-bold" 
-                      : "text-zinc-800 hover:text-blue-600 data-[state=open]:text-blue-600"
-                  )}>
-                    Hire
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="container mx-auto px-4 md:px-8 lg:px-12 py-8">
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {hireItems.map((item, idx) => {
-                          const IconComponent = item.icon;
-                          const isActive = pathname === item.href;
-                          return (
-                            <li key={idx}>
-                              <Link 
-                                href={item.href} 
-                                className={cn(
-                                  "flex items-center gap-3 rounded-xl p-3 transition-all text-[17px] font-semibold group w-full",
-                                  isActive 
-                                    ? "bg-blue-50 text-blue-600" 
-                                    : "text-zinc-700 hover:bg-slate-50 hover:text-blue-600"
-                                )}
-                              >
-                                <IconComponent className={cn(
-                                  "w-5 h-5 shrink-0 transition-colors",
-                                  isActive ? "text-blue-600" : "text-zinc-400 group-hover:text-blue-600"
-                                )} />
-                                <div className="flex flex-col">
-                                  <span>{item.title}</span>
-                                  <span className={cn(
-                                    "text-xs font-normal",
-                                    isActive ? "text-blue-500/80" : "text-zinc-400"
-                                  )}>{item.description}</span>
-                                </div>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
                 {/* Company Menu */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent h-10 px-3.5 text-[20px] font-semibold text-zinc-800 hover:text-blue-600 data-[state=open]:text-blue-600 transition-colors duration-200">
@@ -585,15 +455,6 @@ export function Header() {
                             <div className="flex flex-col">
                               <span>Company Profile</span>
                               <span className="text-xs text-zinc-400 font-normal">Our journey & milestones</span>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/careers" className="flex items-center gap-3 hover:bg-slate-50 hover:text-blue-600 rounded-xl p-3 transition-all text-[17px] text-zinc-700 font-semibold group">
-                            <Briefcase className="w-5 h-5 text-zinc-400 group-hover:text-blue-600 transition-colors" />
-                            <div className="flex flex-col">
-                              <span>We Are Hiring</span>
-                              <span className="text-xs text-zinc-400 font-normal">Join our growing team</span>
                             </div>
                           </Link>
                         </li>
@@ -659,11 +520,6 @@ export function Header() {
                         <li>
                           <Link href="/profile" className="flex items-center gap-3 text-base text-zinc-600 font-medium py-1">
                             <FileText className="w-4 h-4 text-zinc-400" /> Company Profile
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/careers" className="flex items-center gap-3 text-base text-zinc-600 font-medium py-1">
-                            <Briefcase className="w-4 h-4 text-zinc-400" /> We Are Hiring
                           </Link>
                         </li>
                       </ul>
@@ -756,45 +612,6 @@ export function Header() {
                                     </span>
                                   )}
                                 </span>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                  </div>
-
-                  {/* Hire Accordion */}
-                  <div className="border-b border-zinc-100 pb-3">
-                    <button 
-                      onClick={() => setMobileHireOpen(!mobileHireOpen)}
-                      className={cn(
-                        "flex items-center justify-between w-full font-bold text-lg py-2",
-                        pathname.startsWith("/hire") ? "text-blue-600 font-bold" : "text-zinc-800"
-                      )}
-                    >
-                      <span>Hire</span>
-                      <ChevronDown className={cn("w-5 h-5 text-zinc-500 transition-transform duration-200", mobileHireOpen && "rotate-180")} />
-                    </button>
-                    {mobileHireOpen && (
-                      <ul className="pl-4 mt-2 space-y-3 max-h-[250px] overflow-y-auto animate-in fade-in duration-200">
-                        {hireItems.map((item, idx) => {
-                          const IconComponent = item.icon;
-                          const isActive = pathname === item.href;
-                          return (
-                            <li key={idx}>
-                              <Link 
-                                href={item.href} 
-                                className={cn(
-                                  "flex items-center gap-3 text-base font-medium py-1.5 px-3 rounded-lg transition-colors",
-                                  isActive ? "bg-blue-50 text-blue-600" : "text-zinc-600"
-                                )}
-                              >
-                                <IconComponent className={cn(
-                                  "w-4 h-4 shrink-0",
-                                  isActive ? "text-blue-600" : "text-zinc-400"
-                                )} />
-                                {item.title}
                               </Link>
                             </li>
                           );
